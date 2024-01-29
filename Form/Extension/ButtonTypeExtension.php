@@ -40,6 +40,13 @@ class ButtonTypeExtension extends AbstractTypeExtension
         $resolver->setDefined(array('button_class', 'as_link'));
     }
 
+    public static function getExtendedTypes(): iterable
+    {
+        return [
+            LegacyFormHelper::getType('button')
+        ];
+    }
+    
     /**
      * {@inheritdoc}
      */
