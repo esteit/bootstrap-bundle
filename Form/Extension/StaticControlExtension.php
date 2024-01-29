@@ -51,6 +51,13 @@ class StaticControlExtension extends AbstractTypeExtension
         }
     }
 
+    public static function getExtendedTypes(): iterable
+    {
+        return [
+            LegacyFormHelper::getType('form')
+        ];
+    }
+    
     /**
      * {@inheritdoc}
      * Although we only support a field that provides a somewhat text-value we extend the form field.
