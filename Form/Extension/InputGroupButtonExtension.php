@@ -29,6 +29,13 @@ class InputGroupButtonExtension extends AbstractTypeExtension
      */
     protected $buttons = array();
 
+    public static function getExtendedTypes(): iterable
+    {
+        return [
+            LegacyFormHelper::getType('text')
+        ];
+    }
+    
     /**
      * Returns the name of the type being extended.
      *
