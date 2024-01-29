@@ -32,6 +32,13 @@ class TypeSetterExtension extends AbstractTypeExtension
         $view->vars['original_type'] = LegacyFormHelper::isLegacy() ? $form->getConfig()->getType()->getName() : $form->getConfig()->getType()->getBlockPrefix();
     }
 
+    public static function getExtendedTypes(): iterable
+    {
+        return [
+            LegacyFormHelper::getType('form')
+        ];
+    }
+
     /**
      * {@inheritDoc}
      */
