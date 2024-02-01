@@ -6,10 +6,11 @@
 
 namespace Braincrafted\Bundle\BootstrapBundle\Twig;
 
+use Twig\Extension\AbstractExtension;
 use Twig_Extension;
 use Twig_SimpleFunction;
 
-class BootstrapButtonExtension extends Twig_Extension
+class BootstrapButtonExtension extends AbstractExtension
 {
     /**
      * @var BootstrapIconExtension
