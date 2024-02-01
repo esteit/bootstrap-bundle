@@ -6,6 +6,7 @@
 
 namespace Braincrafted\Bundle\BootstrapBundle\Twig;
 
+use Twig\Extension\AbstractExtension;
 use Twig_Extension;
 use Twig_SimpleFunction;
 
@@ -20,7 +21,7 @@ use Twig_SimpleFunction;
  * @license    http://opensource.org/licenses/MIT The MIT License
  * @link       http://bootstrap.braincrafted.com Bootstrap for Symfony2
  */
-class BootstrapFormExtension extends Twig_Extension
+class BootstrapFormExtension extends AbstractExtension
 {
     /** @var string */
     private $style;
