@@ -7,6 +7,8 @@
 namespace Braincrafted\Bundle\BootstrapBundle\Twig;
 
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 use Twig_Extension;
 use Twig_SimpleFilter;
 use Twig_SimpleFunction;
@@ -49,7 +51,7 @@ class BootstrapIconExtension extends AbstractExtension
     public function getFilters()
     {
         return array(
-            new Twig_SimpleFilter(
+            new TwigFilter(
                 'parse_icons',
                 array($this, 'parseIconsFilter'),
                 array('pre_escape' => 'html', 'is_safe' => array('html'))
@@ -63,7 +65,7 @@ class BootstrapIconExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new Twig_SimpleFunction(
+            new TwigFunction(
                 'icon',
                 array($this, 'iconFunction'),
                 array('pre_escape' => 'html', 'is_safe' => array('html'))
