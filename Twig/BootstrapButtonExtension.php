@@ -7,6 +7,7 @@
 namespace Braincrafted\Bundle\BootstrapBundle\Twig;
 
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 use Twig_Extension;
 use Twig_SimpleFunction;
 
@@ -39,8 +40,8 @@ class BootstrapButtonExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new Twig_SimpleFunction('button', array($this, 'buttonFunction'), array('is_safe' => array('html'))),
-            new Twig_SimpleFunction('button_link', array($this, 'buttonLinkFunction'), array('is_safe' => array('html'))),
+            new TwigFunction('button', array($this, 'buttonFunction'), array('is_safe' => array('html'))),
+            new TwigFunction('button_link', array($this, 'buttonLinkFunction'), array('is_safe' => array('html'))),
         );
     }
 
