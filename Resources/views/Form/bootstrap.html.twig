@@ -9,6 +9,7 @@
         {% else %}
             {{ block('form_widget_simple') }}
         {% endif %}
+    {% endapply %}
 {% endblock form_widget %}
 
 {% block form_widget_simple %}
@@ -162,6 +163,7 @@
 {% endblock file_widget %}
 
 {% block choice_widget %}
+    {% apply customspaceless %}
         {% if expanded %}
             {{ block('choice_widget_expanded') }}
         {% else %}
