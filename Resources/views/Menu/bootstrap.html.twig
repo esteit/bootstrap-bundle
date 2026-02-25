@@ -11,7 +11,7 @@
 {% from _self import attributes as attributes %}
 
 {% block compressed_root %}
-{% apply spaceless %}
+{% apply customspaceless %}
 {{ block('root') }}
 {% endapply %}
 {% endblock %}
@@ -72,24 +72,20 @@
 {% endblock %}
 
 {% block dropdownList %}
-{% apply spaceless %}
     {% if item.hasChildren and options.depth is not same as (0) and ((item.extras.dropdown is not defined and item.displayChildren is same as (true) or item.extras.dropdown is defined and item.extras.dropdown is same as (true) and item.displayChildren is same as (true))) %}
         {% set listAttributes = listAttributes|merge({'class': (listAttributes.class|default('') ~ ' dropdown-menu')|trim}) %}
         <ul{{ attributes(listAttributes) }}>
         {{ block('children') }}
         </ul>
     {% endif %}
-{% endapply %}
 {% endblock dropdownList %}
 
 {% block listList %}
-{% apply spaceless %}
     {% if item.hasChildren and options.depth is not same as (0) and item.displayChildren %}
         <ul{{ attributes(listAttributes) }}>
             {{ block('children') }}
         </ul>
     {% endif %}
-{% endapply %}
 {% endblock listList %}
 
 {% block children %}
@@ -173,17 +169,13 @@
 {% block linkElement %}<a href="{{ item.uri }}"{{ attributes(item.linkAttributes) }}>{{ block('label') }}</a>{% endblock %}
 
 {% block dropdownElement %}
-{% apply spaceless %}
     {% set labelAttributes = item.labelAttributes %}
     {% set labelAttributes = labelAttributes|merge({'class': (labelAttributes.class|default('') ~ ' dropdown-toggle')|trim}) %}
     {% set labelAttributes = labelAttributes|merge({'data-toggle': 'dropdown'}) %}
     <a href="#"{{ attributes(labelAttributes) }}>{{ block('label') }} <b class="caret"></b></a>
-{% endapply %}
 {% endblock dropdownElement %}
 
 {% block dividerElement %}
-{% apply spaceless %}
-{% endapply %}
 {% endblock dividerElement %}
 
 {% block spanElement %}<span{{ attributes(item.labelAttributes) }}>{{ block('label') }}</span>{% endblock %}
